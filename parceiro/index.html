@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Área da ferragem – ODDO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body class="partner-page">
+<header class="topo">
+  <div class="wrap topo-in">
+    <a class="logo" href="/"><b>ODDO</b> Área da ferragem</a>
+    <nav aria-label="Principal"><a href="/">Voltar à vitrine</a></nav>
+  </div>
+</header>
+
+<main class="wrap sec">
+  <section id="entrada">
+    <h2>Entre ou cadastre sua ferragem</h2>
+    <div class="grid">
+      <form id="f-entrar" class="box form">
+        <h3>Já sou parceiro</h3>
+        <label>E-mail <input id="email" type="email" autocomplete="email" required></label>
+        <label>Senha <input id="senha" type="password" autocomplete="current-password" required></label>
+        <button class="btn">Entrar</button>
+        <p id="erro" class="erro" role="alert"></p>
+      </form>
+      <form id="f-cad" class="box form">
+        <h3>Quero ser parceiro</h3>
+        <label>Nome da ferragem <input id="c-nome" maxlength="100" required></label>
+        <label>Bairro <input id="c-bairro" maxlength="100" required></label>
+        <label>WhatsApp (com DDD) <input id="c-tel" type="tel" autocomplete="tel" required></label>
+        <label>E-mail <input id="c-email" type="email" autocomplete="email" required></label>
+        <label>Crie uma senha <input id="c-senha" type="password" minlength="8" autocomplete="new-password" required></label>
+        <button class="btn">Cadastrar ferragem</button>
+        <p id="cad-msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="painel" hidden>
+    <h2>Painel de <span id="titulo"></span></h2>
+    <div class="orc">
+      <div class="box">
+        <h3>Meus produtos e preços</h3>
+        <ul id="meus" class="itens"></ul>
+      </div>
+      <div class="form">
+        <form id="f-preco" class="box form">
+          <h3>Cadastrar ou atualizar produto</h3>
+          <label>Produto <input id="p-nome" list="nomes" maxlength="120" required></label>
+          <datalist id="nomes"></datalist>
+          <label>Categoria <input id="p-cat" list="cats" maxlength="80" required></label>
+          <datalist id="cats"></datalist>
+          <label>Preço (R$) <input id="p-preco" type="number" min="0.01" step="0.01" required></label>
+          <label>Imagem do produto <input id="p-imagem" type="file" accept="image/jpeg,image/png,image/webp"></label>
+          <div id="imagem-atual" class="info" hidden></div>
+          <input id="p-id" type="hidden">
+          <input id="p-imagem-url" type="hidden">
+          <button class="btn">Salvar produto</button>
+          <p id="msg" role="status"></p>
+        </form>
+        <div class="box form">
+          <h3>Atendimento</h3>
+          <label class="inline"><input type="checkbox" id="entrega"> Faço entrega</label>
+          <label class="inline"><input type="checkbox" id="retirada"> Cliente pode retirar na loja</label>
+          <label>WhatsApp <input id="tel" type="tel"></label>
+          <p id="perfil-msg" class="info" role="status"></p>
+          <button id="sair" class="btn" type="button">Sair</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/assets/partner.js" defer></script>
+</body>
+</html>

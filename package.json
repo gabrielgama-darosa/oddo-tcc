@@ -1,0 +1,14 @@
+{
+  "name": "oddo-os-donos-da-obra",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:mock": "node dev/server.mjs",
+    "check": "node --check assets/home.js && node --check assets/partner.js && node --check lib/auth.js && node --check lib/db.js"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "1.2.0",
+    "@vercel/blob": "2.8.2"
+  }
+}

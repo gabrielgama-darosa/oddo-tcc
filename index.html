@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ODDO – Os Donos da Obra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#produtos">Ir para os produtos</a>
+
+<header class="topo">
+  <div class="wrap topo-in">
+    <a class="logo" href="/"><b>ODDO</b> Os Donos da Obra</a>
+    <nav aria-label="Principal">
+      <a href="#produtos">Produtos</a>
+      <a href="#lojas">Ferragens</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="/parceiro/">Sou dono de ferragem</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>O material certo, pelo menor preço, na ferragem do seu bairro.</h1>
+      <p>Veja quanto cada ferragem parceira cobra, monte seu orçamento e fale direto com a loja.</p>
+      <form class="busca" id="busca" role="search">
+        <label>Produto <input id="q" type="search" placeholder="Ex.: cimento, tinta, torneira"></label>
+        <label>Meu orçamento (R$) <input id="max" type="number" min="0" step="1" placeholder="Quanto posso gastar?"></label>
+        <label>Categoria <select id="cat"><option value="">Todas</option></select></label>
+        <label>Ordenar por
+          <select id="ord">
+            <option value="menor">Menor preço</option>
+            <option value="nome">Nome (A–Z)</option>
+          </select>
+        </label>
+      </form>
+    </div>
+  </section>
+
+  <section id="produtos" class="wrap sec">
+    <h2>Produtos e preços</h2>
+    <p id="qtd" class="info" aria-live="polite">Carregando produtos...</p>
+    <div id="produtos-lista" class="grid"></div>
+  </section>
+
+  <section id="lojas" class="wrap sec">
+    <h2>Ferragens parceiras</h2>
+    <div id="lojas-lista" class="grid"></div>
+  </section>
+
+  <section id="orcamento" class="wrap sec">
+    <h2>Simulador de orçamento</h2>
+    <div class="orc">
+      <div class="box"><ul id="itens" class="itens"></ul></div>
+      <aside class="box" aria-live="polite">
+        <p class="info">Total com o menor preço de cada item</p>
+        <strong id="total" class="total">R$ 0,00</strong>
+        <div class="barra"><i id="barra"></i></div>
+        <p id="status"></p>
+        <div id="porloja"></div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <p>ODDO é uma vitrine: compra, entrega e retirada são combinadas direto com cada ferragem.</p>
+  </div>
+</footer>
+
+<script src="/assets/home.js" defer></script>
+</body>
+</html>
